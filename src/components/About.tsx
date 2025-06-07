@@ -1,9 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 "use client";
 
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import gsap from "gsap";
 
 interface AboutProps {
   inView: boolean;
@@ -11,7 +10,8 @@ interface AboutProps {
 
 export default function About({ inView }: AboutProps) {
   const counterRefs = useRef<(HTMLSpanElement | null)[]>([]);
-  const stats = [
+  type Stat = { value: number; label: string; suffix?: string };
+  const stats: Stat[] = [
     // { value: 1, label: "Years Experience", suffix: "+" },
     // { value: 20, label: "Projects Completed", suffix: "+" },
     // { value: 15, label: "Happy Clients", suffix: "+" },
@@ -30,7 +30,7 @@ export default function About({ inView }: AboutProps) {
             const duration = 2000;
             const step = Math.floor(duration / endValue);
 
-            let counter = setInterval(() => {
+            const counter = setInterval(() => {
               startValue += 1;
               counterRef.textContent = startValue + (stat.suffix || "");
 
@@ -139,7 +139,7 @@ export default function About({ inView }: AboutProps) {
                 className="text-center p-4 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
               >
                 <span
-                  ref={(el) => (counterRefs.current[index] = el)}
+                  ref={el => { counterRefs.current[index] = el; }}
                   className="block text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2"
                 >
                   0{stat.suffix}
