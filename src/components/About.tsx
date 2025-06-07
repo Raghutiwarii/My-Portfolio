@@ -13,9 +13,7 @@ export default function About({ inView }: AboutProps) {
   type Stat = { value: number; label: string; suffix?: string };
   const stats: Stat[] = [
     // { value: 1, label: "Years Experience", suffix: "+" },
-    // { value: 20, label: "Projects Completed", suffix: "+" },
-    // { value: 15, label: "Happy Clients", suffix: "+" },
-    // { value: 99, label: "Satisfaction Rate", suffix: "%" },
+    // future usecase
   ];
 
   useEffect(() => {
