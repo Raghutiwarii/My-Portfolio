@@ -223,7 +223,7 @@ export default function Projects({ inView }: ProjectsProps) {
         transition={{ duration: 0.6, delay: 0.4 }}
       >
         <a 
-          href="https://github.com/yourusername" 
+          href="https://github.com/Raghutiwarii" 
           target="_blank" 
           rel="noopener noreferrer"
           className="btn px-6 py-3 rounded-md bg-gray-800 dark:bg-gray-700 text-white hover:bg-gray-900 dark:hover:bg-gray-600 transition-colors shadow-md hover:shadow-lg"
